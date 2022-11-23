@@ -19,7 +19,8 @@ const setupInput = function () {
 };
 
 const handleUserInput = function (key) {
-  if (key === '\u0003') {
+  //If you call setupInput but you haven't specified that the program should exit with a certain keyboard command, the program will not stop running! Node will keep the stdin connection open.
+  if (key === '\u0003') { // This will allow for us to terminate the game wiht ctrl + c. 
     process.exit();
   }
   // your code here
