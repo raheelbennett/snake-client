@@ -1,5 +1,7 @@
 const net = require("net");
 
+// establishes a connection with the game server
+
 const connect = function () {
   const conn = net.createConnection({
     host: '165.227.47.243', // IP address here,
@@ -8,7 +10,7 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
     conn.write("Name: RFB"); // this will send to server. it will detect name and can only be max 3 letters.
-//    conn.write("Move: up");
+//    conn.write("Move: up"); // this will move up one time. 
   })
 
   // interpret incoming data as text
