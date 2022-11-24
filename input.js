@@ -2,7 +2,7 @@
 
 let connection;
 
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -12,9 +12,9 @@ const setupInput = function (conn) {
   return stdin;
 };
 
-const handleUserInput = function (key) {
+const handleUserInput = function(key) {
   //If you call setupInput but you haven't specified that the program should exit with a certain keyboard command, the program will not stop running! Node will keep the stdin connection open.
-  if (key === '\u0003') { // This will allow for us to terminate the game wiht ctrl + c. 
+  if (key === '\u0003') { // This will allow for us to terminate the game wiht ctrl + c.
     process.exit();
   }
   if (key === 'w') {
