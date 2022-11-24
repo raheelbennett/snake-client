@@ -1,9 +1,9 @@
 // setup interface to handle user input from stdin
 
-//let connection;
+let connection;
 
 const setupInput = function (conn) {
-  let connection = conn;
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -28,6 +28,13 @@ const handleUserInput = function (key) {
   }
   if (key === 'd') {
     connection.write("Move: right");
+  }
+  //Implement some special keys that send canned messages to the server, for everyone to see.
+  if (key === 'p') {
+    connection.write("Say: Hello");
+  }
+  if (key === 'o') {
+    connection.write("Say: Bye");
   }
 };
 
